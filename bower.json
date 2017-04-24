@@ -1,5 +1,6 @@
 {
   "name": "chef-tracker",
   "dependencies": {
+    "firebase": "^3.0.0"
   }
 }
