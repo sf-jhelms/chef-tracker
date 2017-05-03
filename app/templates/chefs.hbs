@@ -1,0 +1,34 @@
+<div class="flex-container">
+  <div class="flex-item">
+    <h1>Chef Tracker</h1>
+    <p>{{availableChefs.length}} out of {{chefsLength}} chefs are cooking right now!</p>
+    <p>Our {{chefsLength}} chefs teach {{totalStudents}} students.</p>
+    <ul>
+    {{#each model as |chef|}}
+      {{#if chef.isCooking}}
+        <li id="available">
+          {{#link-to 'chefs.chef' chef}}{{chef.name}}{{/link-to}}!
+          <button {{action 'makeExit' chef}}>Exit</button>
+        </li>
+      {{else}}
+        <li class="not-available">
+          {{chef.name}}
+          <button {{action 'makeEnter' chef}}>Enter</button>
+          <button {{action 'destroyItem' chef}}>Fire</button>
+        </li>
+        {{/if}}
+        <p>Number of students:
+          <button {{action 'decStudent' chef}}>-</button>
+          {{chef.numStudents}}
+          <button {{action 'incStudent' chef}}>+</button>
+        </p>
+    {{/each}}
+    </ul>
+    <hr>
+    {{input value=newItem}}
+    <button {{action 'saveNewItem'}}>Save</button>
+  </div>
+  <div class="flex-item">
+    {{outlet}}
+  </div>
+</div>
