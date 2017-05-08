@@ -1,3 +1,7 @@
-li.not-available {
+li.not-cooking {
+  color: grey;
+}
+
+li.not-cooking a {
   color: grey;
 }

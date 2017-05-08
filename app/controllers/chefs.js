@@ -21,9 +21,6 @@ export default Ember.Controller.extend({
     }).save()
     this.set('newItem', '')
   },
-  destroyItem(chef){
-    chef.destroyRecord();
-  },
   decStudent(chef){
     if(chef.get('numStudents')>0) {
     chef.decrementProperty('numStudents', 1)
