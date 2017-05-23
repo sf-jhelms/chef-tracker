@@ -14,3 +14,16 @@
   height: 50px;
   width: 300px;
 }
+
+.small-text-area {
+  height: 10px;
+  width: 125px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}

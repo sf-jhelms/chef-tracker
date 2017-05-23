@@ -1,0 +1,12 @@
+<div class="chef-item {{if chef.isCooking '' 'not-cooking'}}">
+  <div {{action 'toggleOpen'}} class="title-bar">{{chef.name}} <span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
+  {{#if isOpen}}
+    <img src={{chef.imageUrl}} class="img-icon">
+    <div class="description">{{chef.description}}</div>
+    {{#link-to 'chefs.chef' chef}}<button>Show</button>{{/link-to}}
+    {{#link-to 'chefs.chef.edit' chef}}<button>Edit</button>{{/link-to}}
+    <button {{action 'toggleAvailability' chef}}>
+      {{if chef.isCooking 'Exit' 'Enter'}}
+    </button>
+  {{/if}}
+</div>

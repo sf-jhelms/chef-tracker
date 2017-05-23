@@ -6,14 +6,6 @@ export default Ember.Controller.extend({
   chefStudents: Ember.computed.mapBy('model', 'numStudents'),
   totalStudents: Ember.computed.sum('chefStudents'),
   actions: {
-    makeExit(chef){
-    Ember.set(chef,'isCooking', false)
-    chef.save();
-  },
-    makeEnter(chef){
-    Ember.set(chef,'isCooking', true)
-    chef.save();
-  },
   saveNewItem(){
     this.store.createRecord('chef', {
       isCooking: false,

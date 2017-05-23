@@ -5,14 +5,7 @@
     <p>Our {{chefsLength}} chefs teach {{totalStudents}} students.</p>
     <ul>
     {{#each model as |chef|}}
-      <li class="{{if chef.isCooking '' 'not-cooking'}}">
-        {{#link-to 'chefs.chef' chef}}{{chef.name}}{{/link-to}}!
-        {{#if chef.isCooking}}
-          <button {{action 'makeExit' chef}}>Exit</button>
-        {{else}}
-          <button {{action 'makeEnter' chef}}>Enter</button>
-        {{/if}}
-      </li>
+      {{chef-item chef=chef}}
     {{/each}}
     </ul>
     <hr>
